@@ -7,7 +7,9 @@ from api.views import CommentViewSet, GroupViewSet, PostViewSet, UserViewSet
 router = DefaultRouter()
 router.register('posts', PostViewSet)
 router.register('groups', GroupViewSet)
-router.register(r'posts/(?P<post_id>\d+)/comments', CommentViewSet, basename='comments')
+router.register(
+    r'posts/(?P<post_id>\d+)/comments', CommentViewSet, basename='comments'
+)
 router.register('users', UserViewSet)
 
 urlpatterns = [
