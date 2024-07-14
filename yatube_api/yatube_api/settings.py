@@ -1,20 +1,19 @@
-"""Django settings for yatube project."""
+import os
+from dotenv import load_dotenv 
+
 
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
+secret_key = os.getenv('SECRET_KEY')
+SECRET_KEY = secret_key
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'm%(5u7nv9j2%@3xb%#c3p-$9&0$kq$j6l@9+@ogairu48a+dy+'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -97,7 +96,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-# Internationalization
 
 LANGUAGE_CODE = 'ru-RU'
 
@@ -109,8 +107,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
 
